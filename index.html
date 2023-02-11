@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ucamp CRUD - Pesca Deportiva</title>
+    <link rel="stylesheet" href="./css/style.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" 
+    rel="stylesheet" 
+    integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" 
+    crossorigin="anonymous">
+</head>
+<body>
+    <div class="container">
+        <h2 class="mt-5 mb-5">CRUD Señuelos de Pesca</h2>
+        <div class="mb-5">
+            <div class="row">
+                <div class="form-group col-md-6 mb-3">
+                    <label for="name">Nombre</label>
+                    <input type="text" name="name" class="form-control"
+                    id="name"
+                    placeholder="Nombre de Señuelo">
+                </div>
+                <div class="form-group col-md-6 mb-3">
+                    <label for="color">Color</label>
+                    <input type="text" name="color" class="form-control"
+                    id="color"
+                    placeholder="Color de Señuelo">
+                </div>
+                <div class="form-group col-md-6 mb-3">
+                    <label for="type">Tipo (suave, jig, cuchara, jig de metal, plug, crankbait, spinner)</label>
+                    <input type="text" name="type" class="form-control"
+                    id="type"
+                    placeholder="Tipo de Carnada">
+                </div>
+                <div class="form-group col-md-6 mb-3">
+                    <label for="depth">Profundidad (superficie, media agua, fondo)</label>
+                    <input type="text" name="depth" class="form-control"
+                    id="depth"
+                    placeholder="Profundidad de la Carnada">
+                </div>
+                <div class="form-group col-md-6 mb-3">
+                    <label for="weight">Peso (onzas)</label>
+                    <input type="number" name="weight" class="form-control"
+                    id="weight"
+                    placeholder="Peso de la Carnada">
+                </div>
+            </div>         
+        </div>
+    </div>
+    
+
+    <script src="src/js/index.js"></script>
+</body>
+</html>
