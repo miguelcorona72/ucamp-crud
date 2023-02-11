@@ -1,2 +1,2 @@
 # ucamp-crud
-Creación de un Crud de productos de pesca
+Creación de un CRUD de señuelos de pesca
