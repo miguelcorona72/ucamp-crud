@@ -1,9 +1,12 @@
 body {
-    background: rgb(12, 12, 95);
+   background: rgb(9, 36, 69);*/
+  /* background-image: url("../assets/superlure.png");
+   background-repeat: no-repeat;
+   background-size: cover;*/
 }
 
 *{
-    color: white;
+    color: #ffffff;
 }
 
 #Update{
