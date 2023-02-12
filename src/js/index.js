@@ -1,4 +1,3 @@
-
 //document.addEventListener('DOMContentLoaded', () => {// Espera a que cargue nuestro contenido html ...
 
 // valida los inputs de la forma antes de ingresar informacion
@@ -166,4 +165,4 @@ function updateData(index){
 
 }
 
-// })
+//});
