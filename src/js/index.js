@@ -60,11 +60,7 @@ function showData(){
         html += "<td>" + element.type + "</td>";
         html += "<td>" + element.depth + "</td>";
         html += "<td>" + element.weight + "</td>";
-        html += '<td><button onclick="deleteData(' + 
-        index + 
-        ')" class="btn btn-danger">Delete</button><button onclick="updateData(' + 
-        index + 
-        ')" class="btn btn-warning m-2">Edit</button></td>';
+        html += '<td><button onclick="deleteData('+index+')" class="btn btn-danger">Eliminar</button><button onclick="updateData('+index+')" class="btn btn-warning m-2">Editar</button></td>';
         html +="</tr>";
     });
 
@@ -123,7 +119,51 @@ function deleteData(index){
 
 }
 
+// funcion para actualizar/modificar/editar información de local storage
+function updateData(index){
+    // el boton de agregar se escondera y aparecera el boton de editar para actualizar la información en local storage
+    document.getElementById("Submit").style.display = "none";
+    document.getElementById("Update").style.display = "block";
+
+    var lureList;
+    if (localStorage.getItem("lureList") == null) {
+        lureList = [];
+    } else {
+        lureList = JSON.parse(localStorage.getItem("lureList"));
+    }
+
+    document.getElementById("name").value = lureList[index].name;
+    document.getElementById("color").value = lureList[index].color;
+    document.getElementById("type").value = lureList[index].type;
+    document.getElementById("depth").value = lureList[index].depth;
+    document.getElementById("weight").value = lureList[index].weight;
+
+    document.querySelector("#Update").onclick = function(){
+        if(validateForm() == true){
+            lureList[index].name = document.getElementById("name").value;
+            lureList[index].color = document.getElementById("color").value;
+            lureList[index].type = document.getElementById("type").value;
+            lureList[index].depth = document.getElementById("depth").value;
+            lureList[index].weight = document.getElementById("weight").value;
+
+            localStorage.setItem("lureList", JSON.stringify(lureList));
+
+            showData();
+
+            document.getElementById("name").value = "";
+            document.getElementById("color").value = "";
+            document.getElementById("type").value = "";
+            document.getElementById("depth").value = "";
+            document.getElementById("weight").value = "";
+
+            // Boton editar se escondera y aparecera boton agregar
+            document.getElementById("Submit").style.display = "block";
+            document.getElementById("Update").style.display = "none";
+
+        }
+    }
 
 
+}
 
 // })
