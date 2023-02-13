@@ -10,73 +10,144 @@
     rel="stylesheet" 
     integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" 
     crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" integrity="sha512-NhSC1YmyruXifcj/KFRWoC561YpHpc5Jtzgvbuzx5VozKpWvQ+4nXhPdFgmx8xqexRcpAglTj9sIBWINXa8x5w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.10.2/font/bootstrap-icons.min.css" integrity="sha512-YFENbnqHbCRmJt5d+9lHimyEMt8LKSNTMLSaHjvsclnZGICeY/0KYEeiHwD1Ux4Tcao0h60tdcMv+0GljvWyHg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <!-- Estilos CSS especiales  -->
     <link rel="stylesheet" href="./css/style.css">
 </head>
 <body>
-    <div class="container">
-        <h2 class="mt-5 mb-5">CRUD Señuelos de Pesca</h2>
-        <div class="mb-5">
-            <div class="row">
-                <div class="form-group col-md-6 mb-3">
-                    <label for="name">Nombre</label>
-                    <input type="text" name="name" class="form-control"
-                    id="name"
-                    placeholder="Nombre de Señuelo">
+    <header>
+        <nav class="navbar navbar-expand-lg bg-body-tertiary">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="#">Navbar</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="#">¿Quiénes somos?</a>
+                    </li>
+                    <li class="nav-item">
+                    <a class="nav-link" href="#">Catálogo</a>
+                    </li>
+                    <li class="nav-item">
+                    <a class="nav-link" href="#">Contacto</a>
+                    </li>
+                    <li class="nav-item">
+                    <a class="nav-link" href="#">Iniciar sesión</a>    
+             <!--       <a class="nav-link" href="./Inicio_Sesion/sesion.html">Iniciar sesión</a>-->
+                    </li>
+                </ul>
                 </div>
-                <div class="form-group col-md-6 mb-3">
-                    <label for="color">Color</label>
-                    <input type="text" name="color" class="form-control"
-                    id="color"
-                    placeholder="Color de Señuelo">
+            </div>
+            </nav>
+    </header>
+    <main>
+        <div class="container">
+            <div class="logo-shop">
+                <!--   <img src="./assets/logo fishing4.png" alt="logo de spotify">-->
+                    <img src="./assets/Fishing Shop Logo3.png" alt="logo pelican fishing shop">
+            </div>
+            <h2 class="mt-5 mb-5">CRUD Señuelos de Pesca</h2>
+            <div class="mb-5">
+                <div class="row">
+                    <div class="form-group col-md-6 mb-3">
+                        <label for="name">Nombre</label>
+                        <input type="text" name="name" class="form-control"
+                        id="name"
+                        placeholder="Nombre de Señuelo">
+                    </div>
+                    <div class="form-group col-md-6 mb-3">
+                        <label for="color">Color</label>
+                        <input type="text" name="color" class="form-control"
+                        id="color"
+                        placeholder="Color de Señuelo">
+                    </div>
+                    <div class="form-group col-md-6 mb-3">
+                        <label for="type">Tipo (suave, jig, cuchara, jig de metal, plug, crankbait, spinner)</label>
+                        <input type="text" name="type" class="form-control"
+                        id="type"
+                        placeholder="Tipo de Carnada">
+                    </div>
+                    <div class="form-group col-md-6 mb-3">
+                        <label for="depth">Profundidad (superficie, media agua, fondo)</label>
+                        <input type="text" name="depth" class="form-control"
+                        id="depth"
+                        placeholder="Profundidad de la Carnada">
+                    </div>
+                    <div class="form-group col-md-6 mb-3">
+                        <label for="weight">Peso (onzas)</label>
+                        <input type="number" name="weight" class="form-control"
+                        id="weight"
+                        placeholder="Peso de la Carnada">
+                    </div>
+                    <div class="col-lg-12 mt-5">
+                        <button class="btn btn-success" id="Submit" 
+                        onclick="AddData()">Agregar</button>
+                        <button class="btn btn-primary" id="Update">Editar</button>
+                    </div>
+                </div>         
+            </div>
+            <hr>
+            <div class="row mt-5">
+                <div class="col-12">
+                    <table class="table table-bordered" id="crudTable">
+                        <thead>
+                            <tr>
+                                <th>Nombre</th>
+                                <th>Color</th>
+                                <th>Tipo</th>
+                                <th>Profundidad</th>
+                                <th>Peso</th>
+                                <th>Acciones</th>
+                            </tr>
+                        </thead>
+                        <tbody></tbody>
+                    </table>
                 </div>
-                <div class="form-group col-md-6 mb-3">
-                    <label for="type">Tipo (suave, jig, cuchara, jig de metal, plug, crankbait, spinner)</label>
-                    <input type="text" name="type" class="form-control"
-                    id="type"
-                    placeholder="Tipo de Carnada">
-                </div>
-                <div class="form-group col-md-6 mb-3">
-                    <label for="depth">Profundidad (superficie, media agua, fondo)</label>
-                    <input type="text" name="depth" class="form-control"
-                    id="depth"
-                    placeholder="Profundidad de la Carnada">
-                </div>
-                <div class="form-group col-md-6 mb-3">
-                    <label for="weight">Peso (onzas)</label>
-                    <input type="number" name="weight" class="form-control"
-                    id="weight"
-                    placeholder="Peso de la Carnada">
-                </div>
-                <div class="col-lg-12 mt-5">
-                    <button class="btn btn-success" id="Submit" 
-                    onclick="AddData()">Agregar</button>
-                    <button class="btn btn-primary" id="Update">Editar</button>
-                </div>
-            </div>         
-        </div>
-        <hr>
-        <div class="row mt-5">
-            <div class="col-12">
-                <table class="table table-bordered" id="crudTable">
-                    <thead>
-                        <tr>
-                            <th>Nombre</th>
-                            <th>Color</th>
-                            <th>Tipo</th>
-                            <th>Profundidad</th>
-                            <th>Peso</th>
-                            <th>Acciones</th>
-                        </tr>
-                    </thead>
-                    <tbody></tbody>
-                </table>
             </div>
         </div>
-    </div>
-    
+    </main>
+    <footer>
+        <div id="redes-sociales" class="redes">
+            <!--  <img class="redes-logo" src=".//assets/logo pelican3.png" alt="">-->
+                <div class="logo-redes">
+                <!--   <img src="./assets/logo fishing4.png" alt="logo de spotify">-->
+                    <img src="./assets/Fishing Shop Logo3.png" alt="logo pelican fishing shop">
+                </div>
+                <div class="container-redes">
+                    <div class="compania">
+                        <p class="titulos-final">COMPAÑIA</p><br>
+                        <ul>
+                            <li><a href="#">Inicio</a></li><br>
+                            <li><a href="#">Acerca de</a></li><br>
+                            <li><a href="#">¿Quiénes somos?</a></li><br>
+                            <li><a href="#">Catálogo</a></li>
+                        </ul>
+                    </div>
+                    <div class="enlaces">
+                        <p class="titulos-final">ENLACES UTILES</p><br>
+                        <ul>
+                            <li><a href="#">Ayuda</a></li><br>
+                            <li><a href="#">Reproductor Web</a></li><br>
+                            <li><a href="#">Aplicación móvil gratuita</a></li><br>
+                            <li><a href="#">Contacto</a></li><br>
+                        </ul>
+                    </div>
+                </div>
+                    <div class="nav-network">
+                        <ul>
+                            <li><a class="btn-4 btn-circle" href="#"><i class="bi bi-facebook"></i></a></li>
+                            <li><a class="btn-4 btn-circle" href="#"><i class="bi bi-twitter"></i></a></li>
+                            <li><a class="btn-4 btn-circle" href="#"><i class="bi bi-instagram"></i></a></li>
+                        </ul>
+                    </div>
+            </div>
 
+    </footer>
     <script src="./src/js/index.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
 </body>
 </html>

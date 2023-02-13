@@ -12,3 +12,170 @@ body {
 #Update{
     display: none;
 }
+
+.logo-shop img {
+    width: 160px;
+}
+
+.logo-shop {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+#redes-sociales {
+    /*   background-image: url("../assets/mercury.png");
+       background-repeat: no-repeat;
+       background-size: cover;*/
+      /* background-color: rgba(211, 196, 24, 0.44);*/
+     background-color: rgb(5, 5, 5);
+       height: 100%;
+       font-family: var(--font-family);
+       display: grid;
+       grid-template-columns: 1fr 1fr 1fr;
+       padding-top: 40px;
+       padding-left: 60px;
+       padding-right: 60px;
+   }
+   
+   .container-redes {
+       display: flex;
+       justify-content: space-between;
+   }
+   
+   .container-redes a:hover {
+       color: rgb(20, 94, 184);
+   }
+   
+   .logo-redes img {
+       width: 120px;
+   }
+   
+   .compania ul {
+       display: inline;
+       list-style: none;
+        
+   }
+   
+   .compania a {
+       color: rgb(255, 255, 255);
+       text-decoration: none;
+   }
+   
+   .compania {
+       margin-bottom: 15px;
+   }
+   
+   .enlaces ul {
+       display: inline;
+       list-style: none;
+   }
+   
+   .enlaces a {
+       color: rgb(255, 255, 255);
+       text-decoration: none;
+   }
+   
+   .titulos-final {
+       color: rgb(121, 100, 17);
+   }
+   
+   .nav-network ul {
+       display: grid;
+       grid-template-columns: 1fr 1fr 1fr; 
+       list-style: none;  
+   }
+   
+   .btn-4 {
+       background-color: rgb(9, 97, 141);
+       color: #fff;
+       padding: 0.5rem 1rem;
+       border: none;
+       cursor: pointer;
+       font-family: var(--font-family);
+       font-size: 1rem;
+       text-transform: uppercase;
+       font-weight: 600;
+       transition: all 0.3s ease;
+   }
+   
+   .btn-4:hover {
+       background-color: rgb(245, 229, 11);
+       color: rgb(10, 102, 177);
+   }
+   
+   .btn-circle {
+       border-radius: 50%;
+       width: 3rem;
+       height: 3rem;
+   }
+   
+   .nav-network ul {
+       margin-left: 155px;
+       margin-right: 55px;
+   }
+
+/*responsive design*/
+@media screen and (min-width:400px) and (max-width:880px){
+
+  /*  .logo-shop {
+        display: flex;
+        justify-content: center;
+        margin-top: 20px;
+    }*/
+
+
+    #redes-sociales {
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+    
+       /* display: inline;*/
+        /*    grid-template-columns: 1fr;*/
+          /*  padding-top: 20px;*/
+           /* padding: 0;*/
+            padding: 35px;
+        /*justify-content: center;*/
+    }
+    
+    .logo-redes {
+        display: flex;
+        justify-content: center;
+        margin-top: 20px;
+    }
+    
+    .container-redes {
+        display: inline;
+       /* justify-content: center;*/
+    }
+    
+    .nav-network ul {
+        margin-left: 0;
+        margin-right: 0;
+        display: flex;
+        justify-content: center;
+        gap: 25px;
+    }
+    
+    .container-redes {
+        margin: 50px;
+        display: inline;
+    }
+    
+    .titulos-final {
+        text-align: center;
+    }
+    
+    .compania ul {
+        text-align: center;
+        font-family: sans-serif;
+    }
+    
+    .enlaces ul {
+        text-align: center;
+        font-family: sans-serif;
+    }
+
+
+
+}
